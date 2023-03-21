@@ -1,38 +1,65 @@
-.App {
+body,html {
+  background: pink;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hangman svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30vw;
+  height: 40vh;
+  transform: translate(-50%, -50%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hangman line, .hangman circle {
+  stroke: white;
+  stroke-width: 4;
+  fill: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: 30vh;
+  transform: translate(-50%, -50%);
+  background: #aa477a64;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.popup *{
+  margin: 10px;
+}
+.buttons{
+  margin-bottom: 40px;
+}
+.mask{
+  margin: 30px 0;
+    font-size: 3em;
+    color: #870849;
+}
+button {
+  color: #951e5a;
+  background: none;
+  border: 2px solid;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+.pulse:hover, 
+.pulse:focus {
+  border-color: #ef8f6e;
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+.pulse[disabled]{
+  opacity: 0.3;
+  animation: none;
+  border-color: inherit;
+  cursor: not-allowed;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ef8f6e; }
 }
