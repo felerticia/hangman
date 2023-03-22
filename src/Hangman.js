@@ -54,11 +54,10 @@ export default function Hangman() {
     return (
         <div>
             <p className='mask'>{maskWord}</p>
-            <div className='buttons'>
+            <div>
                 {alphabets
                 .map((letter, index) => 
                     <button 
-                        className='pulse'
                         key={index} 
                         disabled= {corrects.includes(letter) || fails.includes(letter)}
                         onClick={() => onGuess(letter)}>
